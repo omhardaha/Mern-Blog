@@ -33,6 +33,7 @@
 
 .sidebarItem > img {
 	padding-top: 15px;
+    width: 100%;
 }
 .sidebarItem > p {
 	padding: 30px;

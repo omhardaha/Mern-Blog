@@ -8,6 +8,7 @@
     align-items: center;
     display: flex;
     color: red;
+    z-index: 7;
 }
 .topLeft , .topRight{
     flex: 3;

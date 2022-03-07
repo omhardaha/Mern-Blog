@@ -1,0 +1,7 @@
+.singlePost{
+    flex: 9;
+}
+.singlePostImage{
+    width: 100%;
+    object-fit: cover;
+}

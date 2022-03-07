@@ -4,10 +4,11 @@ export default function Sidebar() {
 	return (
 		<div className="sidebar">
 			<div className="sidebarItem">
-				<span className="sideBarTitle"> About</span>
+				<span className="sideBarTitle"> ABOUT</span>
 				<img
 					src="https://images.unsplash.com/photo-1602471615287-d733c59b79c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
 					alt=""
+                    className="sideBarImage"
 				/>
 				<p>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
