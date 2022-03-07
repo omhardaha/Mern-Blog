@@ -10,9 +10,45 @@ export default function SinglePost() {
 					className="singlePostImage"
 				/>
 
-                <h1 className="singlePostTitle">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, deleniti.
-                </h1>
+				<h1 className="singlePostTitle">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
+					deleniti.
+					<div className="singlePostEdit">
+						<i className="singlePostEdit fa-solid fa-pen-to-square"></i>
+						<i className="singlePostEdit fa-solid fa-trash"></i>
+					</div>
+				</h1>
+
+					<div className="singlePostInfo">
+						<span className="singlePostauthorName">
+							Author : <b>OM Hardaha</b>
+						</span>
+						<span className="singlePostDate">1 hour ago</span>
+					</div>
+					<p className="singlePostParagraph">
+						Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+						Consectetur ipsa sequi dicta ipsam atque? Ad eius maxime deserunt
+						aspernatur tempore error optio assumenda accusantium officiis?
+						Repellat officiis, eius, sed nam porro officia tempore fuga mollitia
+						et velit dicta modi aut. Lorem ipsum, dolor sit amet consectetur
+						adipisicing elit. Consectetur ipsa sequi dicta ipsam atque? Ad eius
+						maxime deserunt aspernatur tempore error optio assumenda accusantium
+						officiis? Repellat officiis, eius, sed nam porro officia tempore
+						fuga mollitia et velit dicta modi aut. Lorem ipsum, dolor sit amet
+						consectetur adipisicing elit. Consectetur ipsa sequi dicta ipsam
+						atque? Ad eius maxime deserunt aspernatur tempore error optio
+						assumenda accusantium officiis? Repellat officiis, eius, sed nam
+						porro officia tempore fuga mollitia et velit dicta modi aut. Lorem
+						ipsum, dolor sit amet consectetur adipisicing elit. Consectetur ipsa
+						sequi dicta ipsam atque? Ad eius maxime deserunt aspernatur tempore
+						error optio assumenda accusantium officiis? Repellat officiis, eius,
+						sed nam porro officia tempore fuga mollitia et velit dicta modi aut.
+						Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+						Consectetur ipsa sequi dicta ipsam atque? Ad eius maxime deserunt
+						aspernatur tempore error optio assumenda accusantium officiis?
+						Repellat officiis, eius, sed nam porro officia tempore fuga mollitia
+						et velit dicta modi aut.
+					</p>
 			</div>
 		</div>
 	);
