@@ -3,6 +3,7 @@ import "./Write.css";
 export default function write() {
     return (
         <div className="write">
+            <img  className="writeImage" src="https://getintopc.com/wp-content/uploads/2014/05/Sorenson-Squeeze-Premium-Setup-Free-1024x761.jpg.webp" alt="" />
             <form className="writeForm">
                 <div className="writeFormGroup">
                     <label htmlFor="fileInput" class="fileInputLogo" >
