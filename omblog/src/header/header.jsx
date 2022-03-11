@@ -5,7 +5,7 @@ export default function header() {
 		<div className="header">
 			<div className="headerTitles">
 				<div className="headerTitleSm">React & Node Mern App</div>
-				<div className="headerTitleLg">How to make blog on react</div>
+				<div className="headerTitleLg">Blog</div>
 			</div>
 			<img
             className="headerImage"
