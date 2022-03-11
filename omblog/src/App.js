@@ -4,6 +4,7 @@ import Home from "./pages/Home/Home";
 import Single from "./Single/Single";
 import Write from "./Write/Write";
 import Setting from "./Setting/Setting";
+import Login from "./Login/Login";
 function App() {
 	return (
 		<div className="App">
@@ -11,7 +12,8 @@ function App() {
 			{/* <Home /> */}
 			{/* <Single /> */}
             {/* <Write/> */}
-            <Setting/> 
+            {/* <Setting/>  */}
+            <Login/>
 		</div>
 	);
 }

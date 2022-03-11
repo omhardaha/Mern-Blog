@@ -9,7 +9,7 @@ export default function Settings() {
                         <span className="settingUpdateTitle">
                             Update Your Account
                         </span>
-                        <span className="settingUpdateTitle">
+                        <span className="settingDeleteTitle">
                             Delete Your Account
                         </span>
                     </div>
@@ -20,15 +20,18 @@ export default function Settings() {
                             <label htmlFor="fileInput" className="">
                                 <i className="settingPPIcon fa-solid fa-circle-user"></i>
                             </label>
-                            <input type="file" id="fileInput" style={{display:"none"}} />
+                            <input type="file" id="fileInput" style={{ display: "none" }} />
                         </div>
                         <label htmlFor="profileName">UserName</label>
-                        <input type="text" id='profileName' placeholder='omhardaha'/>
+                        <input type="text" id='profileName' placeholder='omhardaha' />
                         <label htmlFor="email">Email</label>
-                        <input type="email" id='email' placeholder='omdigital2016@gmail.com'/>
+                        <input type="email" id='email' placeholder='omdigital2016@gmail.com' />
 
-                        <label htmlFor="">UserName</label>
-                        <input type="text" placeholder='safak'/>
+                        <label htmlFor="">Password</label>
+                        <input type="password" />
+                        <button className="settingSubmit">
+                            Update
+                        </button>
                     </form>
                 </div>
                 <Sidebar />
