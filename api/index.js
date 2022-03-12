@@ -2,8 +2,9 @@ const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
 dotenv.config();
+app.use(express.json());
 const mongoose = require("mongoose");
-const authRoute = require("./routes/auth")
+const authRoute = require("./routes/auth");
 
 mongoose
 	.connect(process.env.MONGO_URL, {
@@ -15,6 +16,7 @@ mongoose
 		console.log("Falied To Connect", err);
 	});
 
+app.use("/api/auth", authRoute);
 app.listen("5000", () => {
 	console.log("server is Running");
 });
