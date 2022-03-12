@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
-
 const dotenv = require("dotenv");
 dotenv.config();
-
 const mongoose = require("mongoose");
+const authRoute = require("./routes/auth")
+
 mongoose
 	.connect(process.env.MONGO_URL, {
 		useNewUrlParser: true,
