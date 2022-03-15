@@ -9,7 +9,7 @@ export default function header() {
 			</div>
 			<img
             className="headerImage"
-				src="https://images.unsplash.com/photo-1646408274632-5078d4604c61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+				src="http://d27k8xmh3cuzik.cloudfront.net/wp-content/uploads/2018/03/acj-2003-beautiful-landscapes-around-the-world-og.jpg"
 				alt=""
 			/>
 		</div>

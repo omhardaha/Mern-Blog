@@ -1,13 +1,12 @@
-import React from "./Posts.css";
+import "./Posts.css";
 import Post from "../Post/Post";
 
-export default function Posts() {
-	return <div className="posts">
-        <Post/>
-        <Post/>
-        <Post/>
-        <Post/>
-        <Post/>
-        <Post/>
-        </div>;
+export default function Posts({ getPosts }) {
+    return <div className="posts">
+        {
+            getPosts.map((p) => (
+                <Post post={p} />
+            ))
+        }
+    </div>;
 }
