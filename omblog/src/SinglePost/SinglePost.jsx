@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 import "./SinglePost.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function SinglePost() {
     const location = useLocation()
@@ -12,20 +13,15 @@ export default function SinglePost() {
         const fetchPosts = async () => {
             const res = await axios.get(`/post/${postId}`);
             await setPost(res.data);
-            console.log(res.data);
+            // console.log(res.data);
         }
         fetchPosts();
-    }, [])
+    }, [postId])
 
     return (
         <div className="singlePost">
             <div className="singlePostWrapper">
-                <img
-                    src="https://images.unsplash.com/photo-1646081499142-3c2945cafdc1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                    alt=""
-                    className="singlePostImage"
-                />
-
+                {getPost.photo && <img src={getPost.photo} alt=""className="singlePostImage"/> }
                 <h1 className="singlePostTitle">
                     {getPost.title}
                     <div className="singlePostEdit">
@@ -36,7 +32,10 @@ export default function SinglePost() {
 
                 <div className="singlePostInfo">
                     <span className="singlePostauthorName">
-                        Author : <b>{getPost.username}</b>
+                        Author : 
+                        <Link to={`/?username=${getPost.username}`}>
+                        <b>{getPost.username}</b>
+                        </Link>
                     </span>
                     <span className="singlePostDate">{new Date(getPost.createdAt).toDateString()}</span>
                 </div>
