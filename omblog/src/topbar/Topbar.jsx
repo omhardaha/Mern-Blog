@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect, useRef, useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../context/Context";
 import "./Topbar.css";
-
-export default function topbar() {
-    const user = false;
+export default function Topbar() {
+    const { user, dispatch } = useContext(Context);
+    const handleLogOut = () => {
+        dispatch({ type: "LOG_OUT" })
+    }
     return (
         <div className="topbar">
             <div className="topLeft">
@@ -15,17 +18,17 @@ export default function topbar() {
             <div className="topCenter">
                 <ul className="topList">
                     {/* <li className="topListItem"> <Link>Home</Link> </li> */}
-                    <li className="topListItem">  <Link to="/">Home</Link></li>
-                    <li className="topListItem">  <Link to="/">About</Link></li>
-                    <li className="topListItem"> <Link to="/Write">{user && "Write"}</Link></li>
-                    <li className="topListItem"> <Link to="/LogOut">{user && "LogOut"}</Link></li>
+                    <li className="topListItem">  <Link to="/">HOME</Link></li>
+                    <li className="topListItem">  <Link to="/">ABOUT</Link></li>
+                    <li className="topListItem"> <Link to="/Write">{user && "WRITE"}</Link></li>
+                    <li className="topListItem" onClick={handleLogOut}> {user && "LOGOUT"} </li>
                 </ul>
             </div>
             <div className="topRight">
                 {(user) ?
                     (<img
                         className="topRightImage"
-                        src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+                        src={user.profilePic || "https://cdn.pixabay.com/photo/2017/06/13/12/53/profile-2398782_1280.png"}
                         alt=""
                     />)
                     : (
@@ -36,6 +39,7 @@ export default function topbar() {
                     )}
                 <i className="topLeftIcons fa-solid fa-magnifying-glass"></i>
             </div>
+
         </div>
     );
 }

@@ -10,18 +10,20 @@
 	color: #444;
 }
 .headerTitleSm{
-    position: absolute;
-    top: 18%;
+    /* position: absolute; */
+    /* top: 18%; */
+    color: #9fadbb;
     font-size: 20px;
 }
 .headerTitleLg{
-    position: absolute;
-    top: 20%;
-    font-size: 100px;
+    /* position: absolute; */
+    /* top: 20%; */
+    margin-bottom: 20px;
+    font-size: 90px;
 }
 .headerImage{
     width: 100%;
-    margin-top: 100px;
+    /* margin-top: 100px; */
     height: 450px;
     object-fit: cover;
 }
