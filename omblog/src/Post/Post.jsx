@@ -1,30 +1,31 @@
 import "./Post.css";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 export default function Post({ post }) {
+    // const imageUrl = 
     return (
         <div className="post">
             {post.photo &&
-            <img
-                className="postImage"
-                src={post.photo}
-                alt=""
-            />
+                <img
+                    className="postImage"
+                    src={"http://localhost:5000/images/" + post.photo}
+                    alt=""
+                />
             }
             <div className="postInfo">
                 <div className="postCategery">
                     {
                         post.categories.map((c) => (
-                            
+
                             <Link to={`/?cat=${c}`}>
-                            <span className="postCat">{c}</span>
+                                <span className="postCat">{c}</span>
                             </Link>
                         ))
                     }
                 </div>
                 <Link to={`/post/${post._id}`}>
-                <span className="postTitle">
-                    {post.title}
-                </span>
+                    <span className="postTitle">
+                        {post.title}
+                    </span>
                 </Link>
                 <hr />
                 <span className="postDate">{new Date(post.createdAt).toDateString()}</span>

@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import { Context } from "../context/Context";
 import "./Topbar.css";
 export default function Topbar() {
-    const { user, dispatch } = useContext(Context);
+    const { user, dispatch,setProgress } = useContext(Context);
     const handleLogOut = () => {
+        setProgress(50)
         dispatch({ type: "LOG_OUT" })
+        setProgress(100)
     }
     return (
         <div className="topbar">

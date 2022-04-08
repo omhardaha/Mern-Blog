@@ -22,10 +22,7 @@ export default function Sidebar() {
                     className="sideBarImage"
                 />
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-                    similique, a cum voluptas vitae, numquam corporis enim modi dicta
-                    consequuntur commodi id ad quae sequi, eveniet pariatur aliquam nulla
-                    vero.
+                    Hey my name is OM hardaha,i am in 2nd year student.
                 </p>
             </div>
             <div className="sidebarItem">
@@ -34,7 +31,7 @@ export default function Sidebar() {
                     {
                         getCategories.map((p) => (
                             <Link to={`/?cat=${p.name}`}>
-                        <li className="sideBarListItem"> {p.name} </li>
+                                <li className="sideBarListItem"> {p.name} </li>
                             </Link>
                         ))
                     }
@@ -48,8 +45,14 @@ export default function Sidebar() {
             <div className="sidebarItem">
                 <span className="sideBarTitle"> Follow Us</span>
                 <div className="sideBarSocialIcons">
-                    <i className="sideBarBottomIcons fa-brands fa-linkedin"></i>
+                    <a target="_blank" href="https://www.linkedin.com/in/om-prakash-hardaha-5aaabb208/">
+                    <i className="sideBarBottomIcons fa-brands fa-linkedin" > 
+                    </i>
+
+                    </a>
+                    <a target="_blank"  className="sideBarBottomIcons" href="https://mobile.twitter.com/omhardaha">
                     <i className="sideBarBottomIcons fa-brands fa-twitter-square"></i>
+                    </a>
                     <i className="sideBarBottomIcons fa-brands fa-facebook-square"></i>
                     <i className="sideBarBottomIcons fa-brands fa-instagram-square"></i>
                 </div>

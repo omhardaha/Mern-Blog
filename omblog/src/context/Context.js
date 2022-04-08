@@ -1,5 +1,6 @@
-import { createContext, useEffect, useReducer } from "react";
+import { createContext, useEffect,useState, useReducer } from "react";
 import Reducer from "./Reducer";
+import LoadingBar from "react-top-loading-bar";
 const INITIAL_STATE = {
 	user: JSON.parse(localStorage.getItem("user")) || null,
 	isFetching: false,
@@ -10,7 +11,9 @@ export const Context = createContext(INITIAL_STATE);
 export const ContextProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(Reducer, INITIAL_STATE);
 
+    const [progress, setProgress] = useState(0);
 	useEffect(() => {
+        setProgress(100);
 		localStorage.setItem("user", JSON.stringify(state.user));
 	}, [state.user]);
 
@@ -21,9 +24,17 @@ export const ContextProvider = ({ children }) => {
 				isFetching: state.isFetching,
 				error: state.error,
 				dispatch,
+                setProgress:setProgress
 			}}
 		>
 			{children}
+            <LoadingBar
+					color="#4ac6ff"
+					progress={progress}
+                    transitionTime={600}
+                    height={3}
+					onLoaderFinished={() => setProgress(0)}
+				/>
 		</Context.Provider>
 	);
 };

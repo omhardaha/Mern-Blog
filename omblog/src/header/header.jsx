@@ -3,8 +3,6 @@ import "./header.css";
 import { useContext } from "react";
 import { Context } from "../context/Context";
 export default function Header() {
-    const { namee } = useContext(Context);
-    console.log(namee);
     return (
         <div className="header">
             <div className="headerTitles">

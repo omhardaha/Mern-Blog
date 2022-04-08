@@ -1,6 +1,14 @@
 .post {
 	width: 385px;
 	margin: 0 25px 40px 26px;
+    border-bottom: 3px solid rgba(211, 211, 211, 0.427);
+}
+.post:hover {
+	/* width: 385px;
+    
+	margin: 0 25px 40px 26px; */
+    /* background-color: #be9656; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .postImage {
 	width: 100%;
