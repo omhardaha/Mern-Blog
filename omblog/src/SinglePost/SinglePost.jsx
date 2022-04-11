@@ -10,7 +10,7 @@ export default function SinglePost() {
     const location = useLocation()
     const postId = location.pathname.split("/")[2];
 
-    const { user ,setProgress} = useContext(Context);
+    const { user, setProgress } = useContext(Context);
     const [getPost, setPost] = useState({})
     useEffect(() => {
         setProgress(40)
@@ -23,20 +23,63 @@ export default function SinglePost() {
         fetchPosts();
     }, [postId])
 
+    const handleDelete = async () => {
+        try {
+            await axios.delete("/post/" + postId, { data: { username: user.username } })
+            await window.location.replace('/')
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    //updatingUser
+    const [titleInput, setTitleInput] = useState()
+    const [descInput, setDescInput] = useState()
+    const [updateMode, setUpdateMode] = useState(false)
+
+    const handleUpdate = async () => {
+        console.log("tre");
+        try {
+            const submitData = {
+                username: user.username,
+                desc:descInput,
+                title: titleInput
+            };
+            const requestOptions = {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(submitData)
+            };
+            const response = await fetch('/post/' + postId, requestOptions);
+            const data = await response.json();
+            console.log(data);
+            await window.location.reload()
+        } catch (error) {
+            console.log(error);
+        }
+    }
     return (
         <div className="singlePost">
             <div className="singlePostWrapper">
                 {getPost.photo && <img src={"http://localhost:5000/images/" + getPost.photo} alt="" className="singlePostImage" />}
-                <h1 className="singlePostTitle">
-                    {getPost.title}
-                    {
-                        user && getPost.username === user.username &&
-                        <div className="singlePostEdit">
-                            <i className="singlePostEditIcon fa-solid fa-pen-to-square"></i>
-                            <i className="singlePostEditIcon fa-solid fa-trash"></i>
-                        </div>
-                    }
-                </h1>
+
+                {!updateMode ?
+                    <h1 className="singlePostTitle">
+                        {getPost.title}
+                        {
+                            user && getPost.username === user.username &&
+                            <div className="singlePostEdit">
+                                <i className="singlePostEditIcon fa-solid fa-pen-to-square" onClick={() => setUpdateMode(true)}></i>
+                                <i className="singlePostEditIcon fa-solid fa-trash" onClick={handleDelete}></i>
+                            </div>
+                        }
+                    </h1> : (
+                        <>
+                            <h4>Update Title</h4>
+                            <input type="text" id="changeTitle" defaultValue={getPost.title} onChange={(e) => setTitleInput(e.target.value)} />
+                        </>
+                    )
+                }
 
                 <div className="singlePostInfo">
                     <span className="singlePostauthorName">
@@ -47,9 +90,19 @@ export default function SinglePost() {
                     </span>
                     <span className="singlePostDate">{new Date(getPost.createdAt).toDateString()}</span>
                 </div>
-                <p className="singlePostParagraph">
-                    {getPost.desc}
-                </p>
+                {
+                    !updateMode ?
+                        <p className="singlePostParagraph">
+                            {getPost.desc}
+                        </p>
+                        : (
+                            <>
+                                <h4>Change Description</h4>
+                                <textarea onChange={(e) => setDescInput(e.target.value)} defaultValue={getPost.desc} name="" id="" cols="30" rows="10"></textarea>
+                                <button onClick={handleUpdate}>Update</button>
+                            </>
+                        )
+                }
             </div>
         </div>
     );

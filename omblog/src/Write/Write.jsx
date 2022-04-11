@@ -11,7 +11,7 @@ export default function Write() {
 
     const { user, setProgress } = useContext(Context);
     useEffect(() => {
-    	setProgress(100);
+        setProgress(100);
     }, []);
 
     const handleSubmit = async (e) => {

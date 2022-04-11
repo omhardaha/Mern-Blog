@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../context/Context";
 import "./Topbar.css";
 export default function Topbar() {
-    const { user, dispatch,setProgress } = useContext(Context);
+    const { user, dispatch, setProgress } = useContext(Context);
     const handleLogOut = () => {
         setProgress(50)
         dispatch({ type: "LOG_OUT" })
@@ -28,11 +28,15 @@ export default function Topbar() {
             </div>
             <div className="topRight">
                 {(user) ?
-                    (<img
+                    (
+                        <Link to="/setting">
+                    <img
                         className="topRightImage"
                         src={user.profilePic || "https://cdn.pixabay.com/photo/2017/06/13/12/53/profile-2398782_1280.png"}
                         alt=""
-                    />)
+                        />
+                        </Link>
+                    )
                     : (
                         <ul className="topList">
                             <li className="topListItem"> <Link to="/Login">Login</Link></li>

@@ -40,13 +40,13 @@ router.delete("/:id", async (req, res) => {
 });
 //getUser
 router.get("/:id", async (req, res) => {
-		try {
-			const getUser = await User.findById(req.params.id);
-            const {password,...other} = getUser._doc;
-			res.status(200).json(other);
-		} catch (error) {
-			res.status(500).json(error);
-		}
+	try {
+		const getUser = await User.findById(req.params.id);
+		const { password, ...other } = getUser._doc;
+		res.status(200).json(other);
+	} catch (error) {
+		res.status(500).json(error);
+	}
 });
 
 module.exports = router;
