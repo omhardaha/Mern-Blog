@@ -32,7 +32,7 @@ export default function Topbar() {
                         <Link to="/setting">
                     <img
                         className="topRightImage"
-                        src={user.profilePic || "https://cdn.pixabay.com/photo/2017/06/13/12/53/profile-2398782_1280.png"}
+                        src={"http://localhost:5000/images/" +user.profilePic || "https://cdn.pixabay.com/photo/2017/06/13/12/53/profile-2398782_1280.png"}
                         alt=""
                         />
                         </Link>

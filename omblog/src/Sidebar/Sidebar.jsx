@@ -22,7 +22,7 @@ export default function Sidebar() {
                     className="sideBarImage"
                 />
                 <p>
-                    Hey my name is OM hardaha,i am in 2nd year student.
+                    Hey my name is OM hardaha , I am in 2nd year student persuing B.Tech.  This is my MultiUser blog website. You can Create Your account and post Your Blogs.
                 </p>
             </div>
             <div className="sidebarItem">

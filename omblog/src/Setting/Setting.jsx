@@ -14,11 +14,18 @@ export default function Settings() {
     const handleSubmit = async (e) => {
         console.log("dfgd thtthdtgh");
         e.preventDefault();
+
         const updatedPost = {
-            username: username,
-            email: email,
-            password: password,
             userId: user._id
+        }
+        if (email) {
+            updatedPost.email = email
+        }
+        if (password) {
+            updatedPost.password = password
+        }
+        if (username) {
+            updatedPost.username = username
         }
         if (file) {
             const data = new FormData();
@@ -39,7 +46,10 @@ export default function Settings() {
         };
         const response = await fetch('/users/' + user._id, requestOptions);
         const data = await response.json();
-        // window.location.reload()
+        if (data) {
+            localStorage.setItem("user", JSON.stringify(data));
+            window.location.reload()
+        }
         console.log(data);
     }
     return (
@@ -57,16 +67,16 @@ export default function Settings() {
                     <form onSubmit={handleSubmit} className="settingForm">
                         <label htmlFor="">Profile Picture</label>
                         <div className="settingPP">
-                            <img src={"http://localhost:5000/images/" + user.profilePic} alt="" />
+                            <img src={"http://localhost:5000/images/" + user.profilePic} />
                             <label htmlFor="fileInput" className="">
                                 <i className="settingPPIcon fa-solid fa-circle-user"></i>
                             </label>
                             <input onChange={e => setFile(e.target.files[0])} type="file" id="fileInput" style={{ display: "none" }} />
                         </div>
                         <label htmlFor="profileName">UserName</label>
-                        <input onChange={e => setUsername(e.target.value)} type="text" id='profileName' placeholder='omhardaha' />
+                        <input onChange={e => setUsername(e.target.value)} type="text" id='profileName' placeholder={user.username} />
                         <label htmlFor="email">Email</label>
-                        <input onChange={e => setEmail(e.target.value)} type="email" id='email' placeholder='omdigital2016@gmail.com' />
+                        <input onChange={e => setEmail(e.target.value)} type="email" id='email' placeholder={user.email} />
 
                         <label htmlFor="">Password</label>
                         <input onChange={e => setPassword(e.target.value)} type="password" />

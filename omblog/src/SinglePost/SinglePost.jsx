@@ -7,6 +7,9 @@ import { Context } from "../context/Context";
 
 
 export default function SinglePost() {
+    window.onbeforeunload = function () {
+        window.scrollTop(40)
+    }
     const location = useLocation()
     const postId = location.pathname.split("/")[2];
 
@@ -42,7 +45,7 @@ export default function SinglePost() {
         try {
             const submitData = {
                 username: user.username,
-                desc:descInput,
+                desc: descInput,
                 title: titleInput
             };
             const requestOptions = {
