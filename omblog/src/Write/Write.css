@@ -13,20 +13,16 @@
 	color: rgb(173, 169, 169);
 	cursor: pointer;
 }
-.writeForm {
-	margin-left: 150px;
-	margin-top: 150px;
-    position: relative;
-}
-.writeFormGroup {
-	display: flex;
-	align-items: center;
+.writeForm div{
+    margin-top: 10px;
+    text-align: center;
 }
 .writeInput{
     font-size: 30px;
     border: none;
     padding: 20px;
     width: 70vw;
+    margin-top: 10px;
 }
 .writeInput:focus{
     outline: none;
@@ -35,11 +31,8 @@
     font-size: 20px;
 }
 .writeSubmit{
-    position: absolute;
-    top: 20px;
-    right: 50px;
     color: white;
-    background-color: teal;
+    /* background-color: teal; */
     padding: 10px;
     border: none;
     border-radius: 10px;
@@ -47,9 +40,16 @@
     font-size: 16px;
 }
 .writeImage{
-    display: block;
-    margin:  auto 150px;
     width: 70vw;
-    object-fit: cover;
+    object-fit: contain;
     height: 300px;
+}
+.bg-theme{    
+    background-color: hsl(206deg 8% 17%);
+    color: rgb(255, 255, 255);
+}
+.write{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

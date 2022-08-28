@@ -1,19 +1,20 @@
 import React from "react";
 import "./header.css";
-import { useContext } from "react";
-import { Context } from "../context/Context";
+
 export default function Header() {
     return (
         <div className="header">
-            <div className="headerTitles">
-                <div className="headerTitleSm">Hey , it is OM Hardaha</div>
-                <div className="headerTitleLg">WelCome To My Blog</div>
+            <div>
+                <div>
+                    <h1 className="text-3xl">My Blog Website</h1>
+                </div>
+                <div >
+                    <span className="text-lg pl-2.5 pr-2.5 pt-9">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt .{" "}
+                    </span>
+                </div>
             </div>
-            <img
-                className="headerImage"
-                src="https://images.unsplash.com/photo-1648942754609-2d5593c5e23e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1228&q=80"
-                alt=""
-            />
         </div>
     );
 }

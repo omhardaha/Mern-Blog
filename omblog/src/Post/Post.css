@@ -1,53 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap');
 .post {
-	width: 385px;
-	margin: 0 25px 40px 26px;
-    border-bottom: 3px solid rgba(211, 211, 211, 0.427);
-    transition: transform .5s ease-in-out;
+    background-color: hsl(206deg 8% 17%);
+    transition: transform 0.3s ease-in-out;
 }
 .post:hover {
-	/* width: 385px;
-    
-	margin: 0 25px 40px 26px; */
-    /* background-color: #be9656; */box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* box-shadow: rgba(116, 109, 109, 0.2) 0px 7px 29px 0px; */
     transform: scale(1.1);
 }
 .postImage {
-	width: 100%;
-	height: 280px;
-	object-fit: cover;
-	border-radius: 8%;
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    border-radius: 8%;
 }
 .postInfo {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.postCategery{
+    margin-top: 10px;
 }
 .postCat {
-	font-family: "Varela Round", sans-serif;
-	font-size: 11px;
-	color: #be9656;
-	margin-top: 10px;
-	margin-right: 10px;
-	cursor: pointer;
+    font-family: "Varela Round", sans-serif;
+    font-size: 11px;
+    color: #000000;
+    border-radius: 8px;
+    margin-top: 10px;
+    background-color: hsl(202deg 81% 86%);
+    padding: 6px;
+    margin-right: 10px;
+    cursor: pointer;
 }
 .postTitle {
-	font-family: "Josefin Sans", sans-serif;
-	margin-top: 15px;
-	font-size: 25px;
-	cursor: pointer;
-	font-weight: 700;
+    font-family: 'Merriweather Sans', sans-serif;
+    letter-spacing: 0.5px;
+    margin-top: 15px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: white;
+    font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 .postDate {
-	color: #999;
-	font-style: italic;
-	font-size: 13px;
-	font-family: "Lora", serif;
+    color: rgb(223, 216, 216);
+    font-size: 13px;
+    margin-top: 10px;
 }
-.postDesc{
-    
-	font-family: "Varela Round", sans-serif;
-    font-size: 14px;
-    color: #444;
+.postDesc {
+    font-family: "Varela Round", sans-serif;
+    font-size: 0.8rem;
+    color: rgb(180, 179, 179);
     line-height: 24px;
     margin-top: 15px;
     overflow: hidden;

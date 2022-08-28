@@ -1,3 +1,23 @@
-.home{
-    display: flex;
+.home-container{
+    padding: 8vh 5vw;
+}
+/* .home{
+    display: grid; 
+    grid-template-areas: 'post  post post sidebar'; 
+    gap: 2vw;
+    padding-top: 40px;
+    background-color: #202024;
+} */
+.b{
+    background-color: aqua;
+}
+.pagination-button{
+    border: none;
+    background-color: hsl(206deg 8% 17%);
+    padding: 10px 20px;
+    color: white;
+    margin: 10px;
+}
+.pagiNation{
+    margin-top: 30px;
 }

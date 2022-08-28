@@ -1,51 +1,52 @@
-import React, { useEffect, useRef, useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
 import { Context } from "../context/Context";
 import "./Topbar.css";
+
 export default function Topbar() {
     const { user, dispatch, setProgress } = useContext(Context);
     const handleLogOut = () => {
-        setProgress(50)
-        dispatch({ type: "LOG_OUT" })
-        setProgress(100)
-    }
+        setProgress(50);
+        dispatch({ type: "LOG_OUT" });
+        setProgress(100);
+    };
+    const closeTopBar = () => {
+        const ip = document.getElementById("active");
+        ip.disabled = false;
+        console.log(ip);
+    };
     return (
-        <div className="topbar">
-            <div className="topLeft">
-                <i className="topLeftIcons fa-brands fa-linkedin"></i>
-                <i className="topLeftIcons fa-brands fa-twitter-square"></i>
-                <i className="topLeftIcons fa-brands fa-facebook-square"></i>
-                <i className="topLeftIcons fa-brands fa-instagram-square"></i>
+        <>
+            <div className="topbar-top">
+                <h1>
+                    Lorem, ipsum  </h1>
             </div>
-            <div className="topCenter">
-                <ul className="topList">
-                    {/* <li className="topListItem"> <Link>Home</Link> </li> */}
-                    <li className="topListItem">  <Link to="/">HOME</Link></li>
-                    <li className="topListItem">  <Link to="/">ABOUT</Link></li>
-                    <li className="topListItem"> <Link to="/Write">{user && "WRITE"}</Link></li>
-                    <li className="topListItem" onClick={handleLogOut}> {user && "LOGOUT"} </li>
-                </ul>
+            <div>
+                <input type="checkbox" id="active" />
+                <label htmlFor="active" className="menu-btn">
+                    <span />
+                </label>
+                <label htmlFor="active" className="close" />
+                <div className="wrapper">
+                    <ul>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                        <a  title="Go To HomePage" href="/">BLOGS</a>
+                        </li>
+                        <li>
+                            <a href="/setting">Profile</a>
+                        </li>
+                        <li>
+                            <a onClick={handleLogOut} href="/setting">{user && "LOGOUT"}</a>
+                        </li>
+                        <li>
+                        <a  title="Write A New Blog" href="/Write">{user && "Write"}</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div className="topRight">
-                {(user) ?
-                    (
-                        <Link to="/setting">
-                    <img
-                        className="topRightImage"
-                        src={"http://localhost:5000/images/" +user.profilePic || "https://cdn.pixabay.com/photo/2017/06/13/12/53/profile-2398782_1280.png"}
-                        alt=""
-                        />
-                        </Link>
-                    )
-                    : (
-                        <ul className="topList">
-                            <li className="topListItem"> <Link to="/Login">Login</Link></li>
-                            <li className="topListItem"> <Link to="/Register">Register</Link></li>
-                        </ul>
-                    )}
-                <i className="topLeftIcons fa-solid fa-magnifying-glass"></i>
-            </div>
+        </>
 
-        </div>
     );
 }

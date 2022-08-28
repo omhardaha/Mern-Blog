@@ -32,7 +32,7 @@ export default function Register() {
                 <input type="password" placeholder="Enter You Password" onChange={e => setPassword(e.target.value)} />
                 <button className="loginButton" type="submit">Register  </button>
             </form>
-            {error && <span>Something Went Wrong</span>}
+            {error && <span style={{"margin-top":"20px"}}> Something Went Wrong </span>}
             <button className="loginRegisterButton">
                 <Link to="/Login">Login</Link>
             </button>

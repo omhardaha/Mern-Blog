@@ -1,20 +1,22 @@
 .singlePost {
 	flex: 9;
+
 }
 .singlePostImage {
-	width: 100%;
 	object-fit: cover;
 	height: 350px;
 	border-radius: 5px;
 }
-.singlePostWrapper {
-	padding: 20px;
-	padding-right: 0;
+.image-container{
+    display: flex;
+    flex-direction: column;
 }
-
 .singlePostTitle {
 	text-align: center;
-	font-family: "Lora", serif;
+    margin-top: 21px;
+    color: white;
+    font-weight: 600;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue";
 }
 .singlePostEdit {
 	float: right;

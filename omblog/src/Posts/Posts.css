@@ -1,6 +1,6 @@
 .posts{
-    flex: 9;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 20px;
+    /* background-color: rgb(252, 134, 134); */
+    grid-area: post;
+    display: grid;
+    justify-content: center;
 }

@@ -26,8 +26,8 @@ export default function Write() {
             data.append('file', file)
             try {
                 const res = await axios.post("/upload", data)
-                console.log(res.data);
-                newPost.photo = res.data
+                // console.log(res.data);
+                newPost.photo = await res.data
             } catch (error) {
                 console.log(error);
             }
@@ -39,37 +39,46 @@ export default function Write() {
         };
         const response = await fetch('/post', requestOptions);
         const data = await response.json();
-        window.location.replace("/post/" + data._id)
+        await window.location.replace("/post/" + data._id)
         console.log(data);
     }
     return (
         <div className="write">
             {
                 (file && <img className="writeImage" src={URL.createObjectURL(file)} alt="" />)}
+                <h1 className="bg-theme text-4xl">Write A New Blog</h1>
+            <form className="writeForm" action="submit flex " onSubmit={handleSubmit}>
+                <div className="writeForm">
 
-            <form className="writeForm" action="submit" onSubmit={handleSubmit}>
-                <div className="writeFormGroup">
-                    <label htmlFor="fileInput" class="fileInputLogo" >
-                        <i class=" fa-solid fa-plus"></i>
-                    </label>
-                    <input type="file" id="fileInput" className="fileInput" onChange={e => setFile(e.target.files[0])} />
-                    <input
+                    <div className="imageDiv ">
 
-                        onChange={e => setTitle(e.target.value)}
-                        type="text"
-                        placeholder="Title"
-                        className="writeInput"
-                        autoFocus={true}
-                    />
+                        <label htmlFor="fileInput" className="fileInputLogo" >
+                            <i class="fa-solid fa-image"></i> 
+                        </label>
+                        <input type="file" id="fileInput" className=" fileInput" onChange={e => setFile(e.target.files[0])} />
+                    </div>
+                    <div className="writeFormGroup">
+                        <input
+                            onChange={e => setTitle(e.target.value)}
+                            type="text"
+                            placeholder="Heading"
+                            className="bg-theme writeInput"
+                            autoFocus={true}
+                        />
+                    </div>
+
+                    <div className="writeFormGroup">
+                        <textarea
+                            onChange={e => setDescription(e.target.value)}
+                            placeholder="Description About Blog"
+                            className="bg-theme writeInput writeText"
+                        ></textarea>
+                    </div>
+                    <div className="buttDiv bg-theme">
+                        <button className="writeSubmit" type="submit"> Publish </button>
+                    </div>
                 </div>
-                <div className="writeFormGroup">
-                    <textarea
-                        onChange={e => setDescription(e.target.value)}
-                        placeholder="tell your story"
-                        className="writeInput writeText"
-                    ></textarea>
-                </div>
-                <button className="writeSubmit" type="submit"> Publish </button>
+
             </form>
         </div>
     );

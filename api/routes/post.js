@@ -54,6 +54,7 @@ router.delete("/:id", async (req, res) => {
 		res.status(500).json(error);
 	}
 });
+
 //getPost
 router.get("/:id", async (req, res) => {
 	try {
@@ -77,6 +78,19 @@ router.get("/", async (req, res) => {
 		} else {
 			allPost = await Post.find();
 		}
+		res.status(200).json(allPost);
+	} catch (error) {
+		res.status(500).json(error);
+	}
+});
+//post by page
+router.get("/page/:number", async (req, res) => {
+	const number = parseInt(req.params.number);
+	console.log(number);
+	try {
+        let start = (number-1) * 10;
+		let finish = start + 10;
+		let allPost = await Post.find().limit(finish).skip(start).exec();
 		res.status(200).json(allPost);
 	} catch (error) {
 		res.status(500).json(error);
