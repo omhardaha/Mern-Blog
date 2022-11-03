@@ -10,6 +10,7 @@ import Register from "./Register/Register";
 import { Context } from "./context/Context";
 import { ContextProvider } from "./context/Context";
 import SinglePost from "./SinglePost/SinglePost";
+import Footer from "./Footer/Footer";
 
 function App() {
     const { user } = useContext(Context);
@@ -49,7 +50,7 @@ function App() {
                     />
                     <Route path={`/Post/:id`} element={<SinglePost />} />
                     <Route path={`/page/:number`} element={<Home />} />
-                </Routes>
+                </Routes> 
             </ContextProvider>
         </>
     );

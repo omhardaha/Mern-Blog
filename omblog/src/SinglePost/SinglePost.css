@@ -4,7 +4,7 @@
 }
 .singlePostImage {
 	object-fit: cover;
-	height: 350px;
+	/* height: 350px; */
 	border-radius: 5px;
 }
 .image-container{
@@ -12,11 +12,7 @@
     flex-direction: column;
 }
 .singlePostTitle {
-	text-align: center;
-    margin-top: 21px;
-    color: white;
     font-weight: 600;
-    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue";
 }
 .singlePostEdit {
 	float: right;

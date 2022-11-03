@@ -4,7 +4,7 @@
     flex-direction: column;
     height: calc(100vh - 50px);
     justify-content: center;
-    background: linear-gradient(rgba(231, 231, 231, 0.44),rgb(0 0 0 / 56%)) ,url(https://stock.adobe.com/lv/search?k=brown+gradient+background);
+    /* background: linear-gradient(rgba(231, 231, 231, 0.44),rgb(0 0 0 / 56%)) ,url(https://stock.adobe.com/lv/search?k=brown+gradient+background); */
     background-size: cover;
     align-items: center;
 }

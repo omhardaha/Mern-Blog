@@ -1,16 +1,21 @@
 import './Setting.css'
 import Sidebar from '../Sidebar/Sidebar.jsx'
 import React, { useEffect, useRef, useState, useContext } from "react";
-import { Context } from "../context/Context";
+import { Context } from "../context/Context"; 
+import Footer from "../Footer/Footer";
 import axios from 'axios';
 export default function Settings() {
 
+    const { user, dispatch, setProgress } = useContext(Context);
+    const handleLogOut = () => {
+        setProgress(50);
+        dispatch({ type: "LOG_OUT" });
+        setProgress(100);
+    };
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [file, setFile] = useState(null)
-    const { user, setProgress } = useContext(Context);
-    console.log(user);
     const handleSubmit = async (e) => {
         console.log("dfgd thtthdtgh");
         e.preventDefault();
@@ -83,10 +88,10 @@ export default function Settings() {
                         <button type="submit" className="settingSubmit">
                             Update
                         </button>
+                        <span onClick={handleLogOut} className="cursor-pointer"> LOGOUT </span>
                     </form>
                 </div>
-                <Sidebar />
-            </div>
+            </div> 
         </>
     )
 }

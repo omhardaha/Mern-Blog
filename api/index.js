@@ -10,6 +10,7 @@ const mongoose = require("mongoose");
 const authRoute = require("./routes/auth");
 const usersRoute = require("./routes/users");
 const postRoute = require("./routes/post");
+const topRoute = require("./routes/top");
 const categoryRoute = require("./routes/category");
 app.use("/images", express.static(path.join(__dirname + "/images")));
 
@@ -56,6 +57,7 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
 });
 
 app.use("/api/auth", authRoute);
+app.use("/api/top", topRoute);
 app.use("/api/users", usersRoute);
 app.use("/api/post", postRoute);
 app.use("/api/category", categoryRoute);

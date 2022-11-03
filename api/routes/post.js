@@ -12,7 +12,15 @@ router.post("/", async (req, res) => {
 		res.status(500).json(error);
 	}
 });
-
+router.get("/length", async (req, res) => {
+    // console.log("Sfds");
+	try {
+		let allPost = await Post.find();
+		res.status(200).json({size:allPost.length});
+	} catch (error) {
+		res.status(500).json(error);
+	}
+});
 //Update
 router.put("/:id", async (req, res) => {
 	try {
@@ -96,5 +104,6 @@ router.get("/page/:number", async (req, res) => {
 		res.status(500).json(error);
 	}
 });
+
 
 module.exports = router;
